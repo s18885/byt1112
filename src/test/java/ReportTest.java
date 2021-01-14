@@ -1,4 +1,3 @@
-package BYT11;
 
 import org.junit.Assert;
 import org.junit.Before;
