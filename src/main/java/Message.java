@@ -4,9 +4,9 @@ public class Message {
     private final Chat chat;
     private final Date dateSend;
     private final String content;
-    private boolean isCreated = true;
-    private boolean isDeleted = true;
-    private boolean isEdit = true;
+    private static boolean isCreated = true;
+    private static boolean isDeleted = true;
+    private static boolean isEdit = true;
 
     public Message(Chat chat, Date dateSend, String content) {
         this.chat = chat;
@@ -26,19 +26,19 @@ public class Message {
         return content;
     }
 
-    public boolean deleteMessage(User user) {
+    public static boolean deleteMessage(User user) {
         if (user != null) {
             return isDeleted;
         }
         return !isDeleted;
     }
-    public boolean createMessage(User user) {
+    public static boolean createMessage(User user) {
         if (user != null) {
             return isCreated;
         }
         return !isCreated;
     }
-    public boolean editMessage(User user) {
+    public static boolean editMessage(User user) {
         if (user != null) {
             return isEdit;
         }

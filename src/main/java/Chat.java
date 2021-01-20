@@ -7,8 +7,8 @@ public class Chat {
     private final User user1;
     private final Date dateCreated;
     private final Collection<Message> messages = new HashSet<Message>();
-    private boolean isDeleted = true;
-    private boolean isCreated = true;
+    private static boolean isDeleted = true;
+    private static boolean isCreated = true;
 
     protected Chat(User user, User user1, Date dateCreated) {
         this.user = user;
@@ -16,14 +16,14 @@ public class Chat {
         this.dateCreated = dateCreated;
     }
 
-    public boolean createChat(User user) {
+    public static boolean createChat(User user) {
         if (user != null) {
             return isCreated;
         }
         return !isCreated;
     }
 
-    public boolean deleteChat(User user) {
+    public static boolean deleteChat(User user) {
         if (user != null) {
             return isDeleted;
         }
